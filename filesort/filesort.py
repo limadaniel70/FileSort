@@ -20,3 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#import os
+
+from config import categories, create_file_extension_dict
+
+file_extensions: dict[str, str] = create_file_extension_dict(categories)
+
+def sort_files(directory: str) -> None:
+    pass

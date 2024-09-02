@@ -23,7 +23,7 @@
 
 from pathlib import Path
 
-from config import categories, create_file_extension_dict
+from .config import categories, create_file_extension_dict
 
 FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(categories)
 

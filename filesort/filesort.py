@@ -37,6 +37,7 @@ def sort_files(directory: Path, files: list[Path]) -> None:
 
             except PermissionError:
                 print(f"Permission deined: {PermissionError}")
+                break
 
 
 def get_current_dir() -> Path:
@@ -49,4 +50,5 @@ def list_files(path: Path) -> list[Path]:
 
 if __name__ == "__main__":
     current_dir = get_current_dir()
-    
+    files = list_files(current_dir)
+    sort_files(current_dir, files)

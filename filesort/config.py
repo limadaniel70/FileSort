@@ -20,7 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# As extensões foram selecionadas através de fileinfo.com
 categories: dict[str, list[str]] = {
     "Executable": [".apk", ".exe", ".jar", ".bat", ".bin", ".appimage", ".sh"],
     "Audio": [".mp3", ".m4a", ".wav"],
@@ -55,20 +54,18 @@ categories: dict[str, list[str]] = {
 
 def create_file_extension_dict(file_categories: dict[str, list[str]]) -> dict[str, str]:
     """
-    Formata as categorias em um dicionário que segue este padrão:
-
-    "rpm" : "Compressed",
-    "png" : "Image",
+    Formats the categories into a dictionary that follows this pattern:
+    "rpm": "Compressed",
+    "png": "Image",
     ...
 
     Args:
-        categories (dict[str, list[str]]): Um dicionário que define as categorias
-        para cada tipo de arquivo.
+        categories (dict[str, list[str]]): A dictionary defining the categories
+        for each file type.
 
     Returns:
-        dict[str, str]: Um dicionário em que as chaves são as extensões dos
-        arquivos e os valores são a sua categoria.
-
+        dict[str, str]: A dictionary where the keys are file extensions and
+        the values are their categories.
     """
     return {
         extension: category

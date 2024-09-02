@@ -25,7 +25,7 @@ categories: dict[str, list[str]] = {
     "Executable": [".apk", ".exe", ".jar", ".bat", ".bin", ".appimage", ".sh"],
     "Audio": [".mp3", ".m4a", ".wav"],
     "Video": [".mkv", ".aep", ".mp4", ".m4v", ".mov"],
-    "Image": [".jpeg", ".png", ".svg", ".gif", ".webp"],
+    "Image": [".jpeg", ".jpg", ".png", ".svg", ".gif", ".webp"],
     "Document": [
         ".doc",
         ".docx",

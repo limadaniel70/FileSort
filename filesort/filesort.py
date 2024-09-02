@@ -36,7 +36,7 @@ def sort_files(directory: Path, files: list[Path]) -> None:
                 file.rename(Path.joinpath(new_dir, file.name))
 
             except PermissionError:
-                print(f"Permission deined: {PermissionError}")
+                print("Permission deined: could not move the files.")
                 break
 
 

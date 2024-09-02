@@ -6,6 +6,10 @@
 
 ## Sumário
 
+1. [Sobre o projeto](#sobre-o-projeto)
+2. [Como instalar](#como-instalar)
+3. [Como contribuir](#como-contribuir)
+
 ## Sobre o projeto
 
 ## Como instalar

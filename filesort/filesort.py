@@ -29,6 +29,21 @@ FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(categories)
 
 
 def sort_files(directory: Path) -> None:
+    """
+    Organizes files in the specified directory into subdirectories based on their file extensions.
+
+    This function scans the provided directory, and for each file with a recognized extension (as defined
+    in the FILE_EXTENSIONS dictionary), it creates (if necessary) a subdirectory named after the file's
+    extension category and moves the file into that subdirectory. It handles permission errors if the file
+    cannot be moved.
+
+    Args:
+        directory (Path): The directory containing the files to be organized. This should be a
+                        `Path` object representing a valid directory path.
+    Raises:
+        PermissionError: If the function does not have permission to move a file, it will print
+                        a message indicating the error.
+    """
     organized_files: int = 0
 
     for file in directory.iterdir():

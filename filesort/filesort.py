@@ -24,11 +24,19 @@ from pathlib import Path
 
 from config import categories, create_file_extension_dict
 
-file_extensions: dict[str, str] = create_file_extension_dict(categories)
+FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(categories)
 
 
-def sort_files(directory: str) -> None:
-    pass
+def sort_files(directory: Path, files: list[Path]) -> None:
+    for file in files:
+        if file.suffix in FILE_EXTENSIONS:
+            new_dir: Path = Path.joinpath(directory, FILE_EXTENSIONS[file.suffix])
+            Path.mkdir(new_dir, exist_ok=True)
+            try:
+                file.rename(Path.joinpath(new_dir, file.name))
+
+            except PermissionError:
+                print(f"Permission deined: {PermissionError}")
 
 
 def get_current_dir() -> Path:

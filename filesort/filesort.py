@@ -43,5 +43,6 @@ def sort_files(directory: Path) -> None:
 
     print(f"Files organized: {organized_files}")
 
+
 if __name__ == "__main__":
     sort_files(Path.cwd())

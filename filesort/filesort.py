@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # MIT License
 #
 # Copyright (c) 2024 Daniel Lima
@@ -27,28 +28,20 @@ from config import categories, create_file_extension_dict
 FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(categories)
 
 
-def sort_files(directory: Path, files: list[Path]) -> None:
-    for file in files:
+def sort_files(directory: Path) -> None:
+    organized_files: int = 0
+
+    for file in directory.iterdir():
         if file.suffix in FILE_EXTENSIONS:
             new_dir: Path = Path.joinpath(directory, FILE_EXTENSIONS[file.suffix])
             Path.mkdir(new_dir, exist_ok=True)
             try:
                 file.rename(Path.joinpath(new_dir, file.name))
-
+                organized_files += 1
             except PermissionError:
-                print("Permission deined: could not move the files.")
-                break
+                print(f"Permission deined: could not move the file {file}.")
 
-
-def get_current_dir() -> Path:
-    return Path.cwd()
-
-
-def list_files(path: Path) -> list[Path]:
-    return [child for child in path.iterdir()]
-
+    print(f"Files organized: {organized_files}")
 
 if __name__ == "__main__":
-    current_dir = get_current_dir()
-    files = list_files(current_dir)
-    sort_files(current_dir, files)
+    sort_files(Path.cwd())

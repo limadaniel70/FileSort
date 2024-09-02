@@ -20,6 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+"""
+Defines the category for each file extension specified.
+"""
 categories: dict[str, list[str]] = {
     "Executable": [".apk", ".exe", ".jar", ".bat", ".bin", ".appimage", ".sh"],
     "Audio": [".mp3", ".m4a", ".wav"],

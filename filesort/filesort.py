@@ -49,4 +49,4 @@ def list_files(path: Path) -> list[Path]:
 
 if __name__ == "__main__":
     current_dir = get_current_dir()
-    print(f"Current dir: {current_dir}\nFiles: {list_files(current_dir)}")
+    

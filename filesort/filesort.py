@@ -1,17 +1,17 @@
 # MIT License
-# 
+#
 # Copyright (c) 2024 Daniel Lima
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,11 +20,25 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#import os
+from pathlib import Path
 
 from config import categories, create_file_extension_dict
 
 file_extensions: dict[str, str] = create_file_extension_dict(categories)
 
+
 def sort_files(directory: str) -> None:
     pass
+
+
+def get_current_dir() -> Path:
+    return Path.cwd()
+
+
+def list_files(path: Path) -> list[Path]:
+    return [child for child in path.iterdir()]
+
+
+if __name__ == "__main__":
+    current_dir = get_current_dir()
+    print(f"Current dir: {current_dir}\nFiles: {list_files(current_dir)}")

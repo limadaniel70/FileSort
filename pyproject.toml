@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "filesort"
 version = "0.1.2"
-description = "File Organizer is a simple Python application designed to automatically organize files within a directory based on their file extensions. "
+description = "A simple Python application designed to automatically organize files within a directory based on their file extensions. "
 authors = ["Daniel Lima"]
 license = "MIT"
 readme = "README.md"

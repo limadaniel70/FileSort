@@ -25,13 +25,15 @@ Defines the category for each file extension specified.
 """
 categories: dict[str, list[str]] = {
     # fmt: off
-    "Executable": [".apk", ".exe", ".jar", ".bat", ".bin", ".appimage", ".sh"],
-    "Audio": [".mp3", ".m4a", ".wav"],
-    "Video": [".mkv", ".aep", ".mp4", ".m4v", ".mov"],
-    "Image": [".jpeg", ".jpg", ".png", ".svg", ".gif", ".webp"],
-    "Document": [".doc", ".docx", ".odt", ".tex", ".txt", ".md", ".pptx", ".ppt", ".pdf"],
+    "Executables": [".apk", ".exe", ".jar", ".bat", ".bin", ".appimage", ".sh", ".dll"],
+    "Audios": [".mp3", ".m4a", ".wav"],
+    "Videos": [".mkv", ".aep", ".mp4", ".m4v", ".mov"],
+    "Images": [".jpeg", ".jpg", ".png", ".svg", ".gif", ".webp"],
+    "Documents": [".doc", ".docx", ".odt", ".tex", ".txt", ".md", ".pptx", ".ppt", ".pdf", ".ods", ".log"],
     "Data": [".db", ".sqlite", ".sql", ".odb", ".xlsx", ".xls", ".dat", ".csv"],
-    "Compressed": [".7z", ".deb", ".gz", ".pkg",".rar", ".rpm", ".gz", ".bz2", ".tar", ".zip"],
+    "Compresseds": [".7z", ".deb", ".gz", ".pkg",".rar", ".rpm", ".gz", ".bz2", ".tar", ".zip"],
+    "DiskImages" : [".iso", ".rom", ".dvd"],
+    "Fonts" : [".ttf", ".otf", ".ttc"]
     # fmt: on
 }
 

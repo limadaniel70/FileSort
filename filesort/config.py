@@ -23,7 +23,7 @@
 """
 Defines the category for each file extension specified.
 """
-categories: dict[str, list[str]] = {
+CATEGORIES: dict[str, list[str]] = {
     # fmt: off
     "Executables": [".apk", ".exe", ".jar", ".bat", ".bin", ".appimage", ".sh", ".dll"],
     "Audios": [".mp3", ".m4a", ".wav"],
@@ -61,4 +61,4 @@ def create_file_extension_dict(file_categories: dict[str, list[str]]) -> dict[st
 
 
 if __name__ == "__main__":
-    print(create_file_extension_dict(categories))
+    print(create_file_extension_dict(CATEGORIES))

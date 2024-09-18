@@ -23,9 +23,9 @@
 
 from pathlib import Path
 
-from .config import categories, create_file_extension_dict
+from .config import CATEGORIES, create_file_extension_dict
 
-FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(categories)
+FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(CATEGORIES)
 
 
 def sort_files(directory: Path) -> None:

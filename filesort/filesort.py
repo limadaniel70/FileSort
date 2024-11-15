@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # MIT License
 #
 # Copyright (c) 2024 Daniel Lima
@@ -21,9 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import sys
 from pathlib import Path
 
-from .config import CATEGORIES, create_file_extension_dict
+from filesort.config import CATEGORIES, create_file_extension_dict
 
 FILE_EXTENSIONS: dict[str, str] = create_file_extension_dict(CATEGORIES)
 
@@ -59,5 +59,26 @@ def sort_files(directory: Path) -> None:
     print(f"Files organized: {organized_files}")
 
 
+def parser() -> None:
+    """
+    Parses command-line argumments.
+    """
+    if len(sys.argv) < 2:
+        sort_files(Path.cwd())
+    elif sys.argv[1] in ["-h", "--help"]:
+        print(
+            "Usage: python script.py [directory]\n"
+            "Sort files in the specified directory. If no directory is provided, "
+            "the current working directory is used."
+        )
+    else:
+        path = Path(sys.argv[1])
+        if path.is_dir():
+            sort_files(Path(path))
+        else:
+            print(f"Error: {path} is not valid.")
+            sys.exit()
+
+
 if __name__ == "__main__":
-    sort_files(Path.cwd())
+    parser()

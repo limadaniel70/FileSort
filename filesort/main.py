@@ -77,7 +77,7 @@ def parser() -> None:
             sort_files(Path(path))
         else:
             print(f"Error: {path} is not valid.")
-            sys.exit()
+            sys.exit(1)
 
 
 if __name__ == "__main__":

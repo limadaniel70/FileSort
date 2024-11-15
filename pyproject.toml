@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "filesort"
-version = "0.1.2"
+version = "0.2.0"
 description = "A simple Python application designed to automatically organize files within a directory based on their file extensions. "
 authors = ["Daniel Lima"]
 license = "MIT"

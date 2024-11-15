@@ -1,4 +1,3 @@
-from pathlib import Path
-from .filesort import sort_files
+from filesort.main import parser
 
-sort_files(Path.cwd())
+parser()
